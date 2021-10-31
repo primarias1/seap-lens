@@ -1,0 +1,26 @@
+{
+  "name": "@primarias1/seap-lens",
+  "version": "0.0.1",
+  "description": "Focus on how public institutions are spending money",
+  "main": "index.mjs",
+  "bin": "exe/cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/primarias1/seap-lens.git"
+  },
+  "keywords": [
+    "SEAP"
+  ],
+  "author": "Andrei Maxim",
+  "license": "EPL-2.0",
+  "engines": {
+    "node": ">= 16"
+  },
+  "bugs": {
+    "url": "https://github.com/primarias1/seap-lens/issues"
+  },
+  "homepage": "https://github.com/primarias1/seap-lens#readme"
+}
