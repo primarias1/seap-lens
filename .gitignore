@@ -4,6 +4,7 @@
 /.docker-compose.override.yml
 /.idea
 /node_modules
+/package-lock.json
 /REVISION
 
 # macOS
