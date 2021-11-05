@@ -80,16 +80,21 @@ pentru o anumită entitate publică identificată printr-un CIF, incluzând și
 entitățile pentru care aceasta e operator principal de credite.
 
 ```shell
-$ seap-lens --for CIF [--include CIF ...] [--single] [-to FILENAME; default=entities.json]
-$ seap-lens {--future|--past} [--on FILENAME; default=entities.json] [--to OUTPUT; default=data.json]
+$ seap-lens config --for CIF [--include CIF ...] [--single] [-to FILENAME; default=entities.json]
+$ seap-lens run {--future|--past} [--on FILENAME; default=entities.json] [--to OUTPUT; default=data.json]
 ```
 
 De exemplu, pentru a genera un fișier `data/primarias1.json` care să cuprindă
 toate entitățile care sunt finanțate de la bugetul local al Sectorului 1:
 
 ```shell
-$ seap-lens --for 4505359 --include 15811175 --include 40311936
-$ seap-lens --on entities.json --future --to data/primarias1.json
+$ seap-lens config --for 4505359 --include 15811175 --include 40311936
+$ seap-lens run --on entities.json --future --to data/primarias1.json
+```
+
+```shell
+$ seap-lens config --for 4505359
+$ seap-lens run --future
 ```
 
 ### Extragerea ID-urilor pentru entitățile publice din SEAP
@@ -101,14 +106,14 @@ baza de date a SEAP-ului, care diferă de CIF.
 Sintaxa completă:
 
 ```shell
-$ seap-lens --for CIF [--include CIF ...] [--single] [-to FILENAME; default=entities.json]
+$ seap-lens config --for CIF [--include CIF ...] [--single] [-to FILENAME; default=entities.json]
 ```
 
 Rezultatul va fi un fișier JSON numit `entities.json`, generat în folderul 
 curent.
 
 Opțiunile reprezintă:
-* `--for CIF` CIF-ul instituției publice care este operator principal de credite
+* `--for CIF` CIF-ul instituției publice care este ordonator principal de credite
 * `-- include CIF` CIF suplimentar
 * `--single` doar instituția publică specificată via `--for`, fără instituțiile
   pentru care aceasta e operator principal de credite
@@ -123,19 +128,19 @@ De exemplu, pentru a se mapa toate instituțiile publice ce țin de Primăria
 Sectorului 1:
 
 ```shell
-$ seap-lens --for 4505359
+$ seap-lens config --for 4505359
 ```
 
 Pentru a se include și CET Grivița și CIDSDIPP S1:
 
 ```shell
-$ seap-lens --for 4505359 --include 15811175 --include 40311936
+$ seap-lens config --for 4505359 --include 15811175 --include 40311936
 ```
 
 Pentru a se mapa exclusiv Administrația Domeniului Public Sectorul 1:
 
 ```shell
-$ seap-lens --for 4602068 --single
+$ seap-lens config --for 4602068 --single
 ```
 
 ### Extragerea informațiilor din SEAP
@@ -151,7 +156,7 @@ de achiziții într-un format JSON care poate fi mai ușor de manipulat.
 Sintaxa completă:
 
 ```shell
-$ seap-lens --on TYPE [--from FILENAME; default=entities.json] [--to OUTPUT; default=data.json]
+$ seap-lens run --on TYPE [--from FILENAME; default=entities.json] [--to OUTPUT; default=data.json]
 ```
 
 Opțiunile reprezintă:
